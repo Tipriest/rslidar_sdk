@@ -35,19 +35,19 @@ lidar:
       pcap_repeat: true            #  true: The pcap bag will repeat play   
       pcap_rate: 1.0               #  Rate to read the pcap file
       pcap_path: /home/robosense/lidar.pcap #The path of pcap file
-      x: 0.318
-      y: -0.157
-      z: -0.112
-      roll: -3.1415926535
-      pitch: -1.5707963267949
+      x: -0.318
+      y: 0.157
+      z: 0.112
+      roll: 3.1415926535
+      pitch: 1.5707963267949
       yaw: 0.0
 
     ros:
       ros_frame_id: IMU_LINK                           #Frame id of packet message and point cloud message
       ros_recv_packet_topic: /rslidar_packets_back          #Topic used to receive lidar packets from ROS
       ros_send_packet_topic: /rslidar_packets_back          #Topic used to send lidar packets through ROS
-      ros_send_imu_data_topic: /rslidar_imu_data_merged       #Topic used to send imu data through ROS
-      ros_send_point_cloud_topic: /rslidar_points_merged      #Topic used to send point cloud through ROS
+      ros_send_imu_data_topic: /rslidar_imu_trans_back       #Topic used to send imu data through ROS
+      ros_send_point_cloud_topic: /rslidar_points_trans_back      #Topic used to send point cloud through ROS
       ros_queue_length: 100                            #Topic QoS history depth
   # front lidar
   - driver:
@@ -78,17 +78,17 @@ lidar:
       pcap_repeat: true            #  true: The pcap bag will repeat play   
       pcap_rate: 1.0               #  Rate to read the pcap file
       pcap_path: /home/robosense/lidar.pcap #The path of pcap file
-      x: -1.234
-      y: -0.157
-      z: -0.112
+      x: 1.234
+      y: 0.157
+      z: 0.112
       roll: 0.0
-      pitch: -1.5707963267949
+      pitch: 1.5707963267949
       yaw: 0.0
 
     ros:
       ros_frame_id: IMU_LINK                            #Frame id of packet message and point cloud message
       ros_recv_packet_topic: /rslidar_packets_front          #Topic used to receive lidar packets from ROS
       ros_send_packet_topic: /rslidar_packets_front          #Topic used to send lidar packets through ROS
-      ros_send_imu_data_topic: /rslidar_imu_data_merged       #Topic used to send imu data through ROS
-      ros_send_point_cloud_topic: /rslidar_points_merged      #Topic used to send point cloud through ROS
+      ros_send_imu_data_topic: /rslidar_imu_trans_front       #Topic used to send imu data through ROS
+      ros_send_point_cloud_topic: /rslidar_points_trans_front      #Topic used to send point cloud through ROS
       ros_queue_length: 100                            #Topic QoS history depth
